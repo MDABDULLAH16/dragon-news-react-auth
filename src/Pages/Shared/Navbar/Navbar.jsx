@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import user from "../../../assets/user.png";
 
 const Navbar = () => {
   const navLinks = (
@@ -47,7 +48,10 @@ const Navbar = () => {
         <ul className='menu flex menu-horizontal px-1'>{navLinks}</ul>
       </div>
       <div className='navbar-end'>
-        <a className='btn'>Button</a>
+        <img className='w-11 mr-6 ' src={user} alt='user' />
+        <Link className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'>
+          Login
+        </Link>
       </div>
     </div>
   );
