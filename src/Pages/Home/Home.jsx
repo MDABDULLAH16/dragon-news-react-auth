@@ -4,6 +4,8 @@ import Header from "../Shared/Header/Header";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import BrackingNews from "../BrackingNews";
+import NewsFeed from "../NewsFeed";
+import News from "../News";
 
 const Home = () => {
   return (
@@ -16,8 +18,7 @@ const Home = () => {
           <LeftSideNav></LeftSideNav>
         </div>
         <div className='col-span-2 border border-red-800'>
-          {" "}
-          <h1 className='text-4xl'>News comming soon</h1>{" "}
+          <News></News>
         </div>
         <div className=''>
           {" "}
