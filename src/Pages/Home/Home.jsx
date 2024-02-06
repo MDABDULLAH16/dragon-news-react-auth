@@ -19,7 +19,7 @@ const Home = () => {
           {" "}
           <h1 className='text-4xl'>News comming soon</h1>{" "}
         </div>
-        <div className='border'>
+        <div className=''>
           {" "}
           <RightSideNav></RightSideNav>
         </div>
