@@ -10,10 +10,13 @@ const News = () => {
       .then((data) => setNewses(data));
   }, []);
   return (
-    <div className='border'>
-      {newses.map((news) => (
-        <NewsFeed key={news._id} news={news}></NewsFeed>
-      ))}
+    <div className=''>
+      <h1 className='text-3xl font-bold'>Dragon News Home</h1>
+      <div className=''>
+        {newses.map((news) => (
+          <NewsFeed key={news._id} news={news}></NewsFeed>
+        ))}
+      </div>
     </div>
   );
 };
