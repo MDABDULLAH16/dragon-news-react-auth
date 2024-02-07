@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import user from "../../../assets/user.png";
+import userimage from "../../../assets/user.png";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { userLogOut, user } = useContext(AuthContext);
+  const handleLogOut = () => {
+    userLogOut();
+  };
   const navLinks = (
     <div className='flex'>
       <li>
@@ -51,13 +56,26 @@ const Navbar = () => {
         <ul className='menu flex menu-horizontal px-1'>{navLinks}</ul>
       </div>
       <div className='navbar-end'>
-        <img className='w-11 mr-6 ' src={user} alt='user' />
-        <Link
-          to='/login'
-          className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'
-        >
-          Login
-        </Link>
+        <img
+          className='w-12 mr-2 rounded-full '
+          src={user ? user.photoURL : userimage}
+          alt='user'
+        />
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'
+          >
+            SignOut
+          </button>
+        ) : (
+          <Link
+            to='/login'
+            className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
