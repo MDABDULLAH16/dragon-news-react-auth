@@ -14,6 +14,9 @@ const Navbar = () => {
       <li>
         <Link>Career</Link>
       </li>
+      <li>
+        <Link to='/login'>Login</Link>
+      </li>
     </div>
   );
   return (
@@ -49,7 +52,10 @@ const Navbar = () => {
       </div>
       <div className='navbar-end'>
         <img className='w-11 mr-6 ' src={user} alt='user' />
-        <Link className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'>
+        <Link
+          to='/login'
+          className='btn bg-gray-500 font-poppins font-semibold text-2xl text-white border-none pr-9 pl-9'
+        >
           Login
         </Link>
       </div>
