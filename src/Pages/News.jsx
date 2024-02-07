@@ -10,7 +10,7 @@ const News = () => {
       .then((data) => setNewses(data));
   }, []);
   return (
-    <div>
+    <div className='border'>
       {newses.map((news) => (
         <NewsFeed key={news._id} news={news}></NewsFeed>
       ))}
