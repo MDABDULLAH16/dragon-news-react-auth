@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layOut/Root";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import NewsDetails from "../Pages/Shared/NewsDetails";
+import NewsDetails from "../Pages/NewsDetails";
 import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
@@ -16,10 +16,10 @@ const routes = createBrowserRouter([
         path: "/newsDetails/:id",
         element: (
           <PrivateRoute>
-            <NewsDetails></NewsDetails>
+            <NewsDetails></NewsDetails>,
           </PrivateRoute>
         ),
-        // loader: ({ params }) => fetch(`/newsDetails/${params.id}`),
+        loader: () => fetch("/news.json"),
       },
       {
         path: "/login",
