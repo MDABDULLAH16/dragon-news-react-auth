@@ -15,11 +15,11 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    setLoading(false);
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const userLogin = (email, password) => {
-    setLoading(false);
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -35,6 +35,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const userLogOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
   const authInfo = {

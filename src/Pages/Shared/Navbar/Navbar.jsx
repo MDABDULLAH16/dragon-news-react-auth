@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = (
     <div className='flex'>
       <li>
-        <Link>Home</Link>
+        <Link to='/'>Home</Link>
       </li>
       <li>
         <Link>About</Link>

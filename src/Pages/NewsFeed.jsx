@@ -4,15 +4,18 @@ import { IoMdEye } from "react-icons/io";
 import { CiShare2 } from "react-icons/ci";
 import { FiBookmark } from "react-icons/fi";
 import { FaBookmark, FaShare, FaShareSquare, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsFeed = ({ news }) => {
   // console.log(news);
   const { img, name, published_date } = news.author;
-  const { title, thumbnail_url, details, image_url, rating, total_view } = news;
+  const { title, _id, details, image_url, rating, total_view } = news;
 
   const more = (
     <div>
-      <button className='text-orange-400'>Read More</button>
+      <Link to={`/newsDetails/${_id}`}>
+        <button className='text-orange-400'>Read More</button>
+      </Link>
     </div>
   );
   return (
