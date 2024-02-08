@@ -17,6 +17,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        //navigate after user login
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
